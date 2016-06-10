@@ -194,6 +194,8 @@ namespace comp123assignment2
             bool roundHit = this._hitAttempt();
             int roundDamage = this._hitDamage();
 
+            Console.WriteLine("==============");
+            Console.WriteLine("Battle Info   \\\\");
             Console.WriteLine("**************************************************");
             if (roundHit == true)
                 {
@@ -203,6 +205,7 @@ namespace comp123assignment2
                 {
                 Console.WriteLine("{0} missed!  ¯\\_(ツ)_/¯ ", this._name);
                 }
+            Console.WriteLine();
             Console.WriteLine("**************************************************");
             }
         }

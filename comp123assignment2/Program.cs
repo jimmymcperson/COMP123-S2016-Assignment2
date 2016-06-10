@@ -10,7 +10,7 @@ using System.Threading.Tasks;
  * Student#: 300869273
  * Date Modified: June 9, 2016
  * Description: This is a demonstration of inheritance in object-oriented programming.
- * Version: 0.0.3 - Added ShowPowers(), refactored _generateRandomPowers.
+ * Version: 0.1.0 - Changed Fight() from Hero class. Cleaned up Program class.
  * ==================================================================================================
  */
 namespace comp123assignment2
@@ -35,24 +35,22 @@ namespace comp123assignment2
          */
         public static void Main(string[] args)
             {
-            Hero hero = new Hero("Imhotep");
-
-            Console.WriteLine();
-
-            hero.Show();
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            hero.Fight();
-
-            Console.WriteLine();
-
             SuperHero heroOfJustice = new SuperHero("Hero of Justice");
 
             Console.WriteLine();
 
             heroOfJustice.ShowPowers();
+
+            Console.WriteLine();
+            Console.WriteLine();
+
+            heroOfJustice.Show();
+
+            Console.WriteLine();
+
+            heroOfJustice.Fight();
+
+            Console.WriteLine();
 
             }
         }

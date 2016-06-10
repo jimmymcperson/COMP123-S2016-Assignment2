@@ -132,7 +132,5 @@ namespace comp123assignment2
                 }
             Console.WriteLine("____________________");
             }
-
-
-    }
+        }
     }
