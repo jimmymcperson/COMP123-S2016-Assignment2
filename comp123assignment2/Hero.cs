@@ -171,7 +171,7 @@ namespace comp123assignment2
          */
         public void Show()
             {
-            Console.WriteLine("====================\n{0}\n====================", this._name);
+            Console.WriteLine("====================\n{0}\n====================", this.Name);
             Console.WriteLine("Stats");
             Console.WriteLine("____________________");
             Console.WriteLine("HP  {0,3}", _health);

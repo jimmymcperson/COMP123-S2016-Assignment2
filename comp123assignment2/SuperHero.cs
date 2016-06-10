@@ -39,12 +39,6 @@ namespace comp123assignment2
                 {
                 this._superPowers = value;
                 Console.WriteLine("Superpowers set!");
-                int i = 1;
-                foreach (string superpower in _superPowers)
-                    {
-                    Console.WriteLine(i + " " + superpower);
-                    i++;
-                    }
                 }
             }
 
@@ -103,10 +97,10 @@ namespace comp123assignment2
             string[] selectedSuperPowers = new string[3];
             string selectedPower;
             Random roll = new Random();
-            for (int i = 0; count < 3; i++)
+            while (count < 3)
                 {
                 selectedPower = possibleSuperPowers[this._randomNumber(roll, 0, 6)];
-                if (!selectedSuperPowers.Contains(selectedPower))
+                if (!selectedSuperPowers.Contains(selectedPower)) //checks for duplicate powers
                     {
                     selectedSuperPowers[count] = selectedPower;
                     count++;
@@ -118,9 +112,27 @@ namespace comp123assignment2
 
         // PUBLIC METHODS ===============================================================
 
+        /** <summary>
+         * This method displays the values in the _superPowers field.
+         * </summary>
+         *
+         * @method ShowPowers
+         * @returns {void}
+         */
+         public void ShowPowers()
+            {
+            int i = 1;
+            Console.WriteLine("====================\n{0}\n====================", this.Name);
+            Console.WriteLine("Powers");
+            foreach (string superpower in SuperPowers)
+                {
+                Console.WriteLine("____________________");
+                Console.WriteLine(i + ". " + superpower);
+                i++;
+                }
+            Console.WriteLine("____________________");
+            }
 
 
-
-
-        }
+    }
     }
