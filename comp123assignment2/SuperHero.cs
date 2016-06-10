@@ -17,12 +17,11 @@ namespace comp123assignment2
     public class SuperHero : Hero
         {
 
-        // PRIVATE INSTANCE VARIABLES =====================================================
+        // PRIVATE INSTANCE VARIABLES ===============================================================
 
         private string[] _superPowers;
-        private enum SuperPowerEnum { a = 1, b, c, d, e, f };
 
-        // PUBLIC PROPTERTIES =====================================================
+        // PUBLIC PROPTERTIES ===============================================================
 
         /** <summary>
         * This is the property that read/writes the _superPowers field.
@@ -38,12 +37,18 @@ namespace comp123assignment2
                 }
             set
                 {
-//                this._superPowers = ;
+                this._superPowers = value;
                 Console.WriteLine("Superpowers set!");
+                int i = 1;
+                foreach (string superpower in _superPowers)
+                    {
+                    Console.WriteLine(i + " " + superpower);
+                    i++;
+                    }
                 }
             }
 
-        // CONSTRUCTORS =====================================================
+        // CONSTRUCTORS ================================================================
 
         /** <summary>
         * This is the default/empty constructor.
@@ -54,31 +59,38 @@ namespace comp123assignment2
         public SuperHero()
             : base()
             {
-            this._initializeAll();
+            this._defaultInitialize();
             }
 
+        /** <summary>
+        * This constructor assigns superpowers for the _superPower field.
+        * It also uses the Hero(string name) constructor from the hero class.
+        * </summary>
+        *
+        * @constructor SuperHero
+        */
         public SuperHero(string name)
             : base(name)
             {
-//            this._generateRandomPowers();
+            this._generateRandomPowers();
             }
 
-        // PRIVATE METHODS =====================================================
+        // PRIVATE METHODS ===============================================================
 
         /** <summary>
-         * This method initializes all fields at a default value.
+         * This method initializes all fields at a default value for the SuperHero class.
          * </summary>
          *
-         * @method _initializeAll
+         * @method _defaultInitialize
          * @returns {void}
          */
-        private void _initializeAll()
+        private void _defaultInitialize()
             {
-//            this._superPowers = ;
+            this._superPowers = new string[0];
             }
 
         /** <summary>
-         * This method randomly sets the superhero's superpowers.
+         * This method sets the _superPowers field with 3 random, distinct superpowers.
          * </summary>
          *
          * @method _generateRandomPowers
@@ -86,13 +98,25 @@ namespace comp123assignment2
          */
         private void _generateRandomPowers()
             {
+            int count = 0;
+            string[] possibleSuperPowers = new string[6] { "Super Speed", "Super Strength", "Body Armour", "Flight", "Fire Generation", "Weather Control" };
+            string[] selectedSuperPowers = new string[3];
+            string selectedPower;
             Random roll = new Random();
-            this._randomNumber(roll, 1, 7);
+            for (int i = 0; count < 3; i++)
+                {
+                selectedPower = possibleSuperPowers[this._randomNumber(roll, 0, 6)];
+                if (!selectedSuperPowers.Contains(selectedPower))
+                    {
+                    selectedSuperPowers[count] = selectedPower;
+                    count++;
+                    }
+                }
+            this.SuperPowers = selectedSuperPowers;
             }
 
 
-
-        // PUBLIC METHODS =====================================================
+        // PUBLIC METHODS ===============================================================
 
 
 

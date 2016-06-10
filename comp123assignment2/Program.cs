@@ -10,7 +10,7 @@ using System.Threading.Tasks;
  * Student#: 300869273
  * Date Modified: June 9, 2016
  * Description: This is a demonstration of inheritance in object-oriented programming.
- * Version: 0.0.1 - Initial commit.
+ * Version: 0.0.2 - Completed SuperHero constructors, _generateRandomPowers, and renamed _initializeAll method from Hero and SuperHero class.
  * ==================================================================================================
  */
 namespace comp123assignment2
@@ -47,6 +47,8 @@ namespace comp123assignment2
             hero.Fight();
 
             Console.WriteLine();
+
+            SuperHero heroOfJustice = new SuperHero("Hero of Justice");
 
             }
         }

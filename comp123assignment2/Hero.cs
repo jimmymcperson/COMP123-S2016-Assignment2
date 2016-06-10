@@ -55,7 +55,7 @@ namespace comp123assignment2
          */
         public Hero()
             {
-            this._initializeAll();
+            this._defaultInitialize();
             Console.WriteLine("A hero has been generated!");
             }
 
@@ -95,13 +95,13 @@ namespace comp123assignment2
             }
 
         /** <summary>
-         * This method initializes all fields at a default value.
+         * This method initializes all fields at a default value for the Hero class.
          * </summary>
          *
-         * @method _initializeAll
+         * @method _defaultInitialize
          * @returns {void}
          */
-        private void _initializeAll()
+        private void _defaultInitialize()
             {
             this._strength = 1;
             this._speed = 1;
